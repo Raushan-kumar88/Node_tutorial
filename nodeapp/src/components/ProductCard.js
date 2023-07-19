@@ -3,7 +3,7 @@ import './productcard.css'
 const ProductCard = ({title,thumbnail}) => {
   return (
     <>
-        <div class="container mt-5 bg-black">
+        <div class=" items-center justify-center flex mt-5 w-full">
                 <div class="row">
                     <div class="col-md-3">
                         <div class="card">

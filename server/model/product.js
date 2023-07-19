@@ -5,7 +5,7 @@ const productSchema = new Schema({
       description: String,
       price: Number,
       discountPercentage: Number,
-      rating: {type:Number,min:[0,'minimum rating 0'],max:[5,'maximum rating 5']},
+      rating: {type:Number,min:[0,'minimum rating 0'],max:[5,'maximum rating 5'],default:0},
       brand: String,
       category: String,
       thumbnail: String,
