@@ -6,7 +6,7 @@ const Home = () => {
   const [product, setProduct] = useState(products);
 
   const getProduct = async() => {
-    const res = await axios.get("http://localhost:8080/products");
+    const res = await axios.get("/products");
     // console.log(res);
     if (res.data) {
       setProduct(res.data);
@@ -14,7 +14,7 @@ const Home = () => {
   };
 
   const deleteProduct = async(id) => {
-    const res = await axios.delete(`http://localhost:8080/products/${id}`);
+    const res = await axios.delete(`/products/${id}`);
     console.log(res.data);
     if(res.data._id){
       setProduct(product.filter(p=>p._id!==res.data._id));
