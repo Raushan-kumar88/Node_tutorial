@@ -19,30 +19,31 @@ const AddProduct = () => {
  const addProduct = async(product) => {
     const res = await axios.post("http://localhost:8080/products",product);
     console.log(res.data);
-    // if (res.data) {
-    //   setProduct(res.data);
-    // }
   };
   return (
-    <form action="" onSubmit={handleSubmit} className='bg-slate-300 w-full px-4 py-4 lg:py-10 lg:px-20'>
-        <fieldset className=' w-full'>
+    <form action="" onSubmit={handleSubmit} className='bg-slate-300 w-full h-[100vh] px-4 py-4 lg:py-10 lg:px-20'>
+        <fieldset className=' w-full px-36'>
             <legend>Add Product</legend>
-            <div className='form-group'>
-                <label htmlFor="title">title</label>
+            <div className='form-group class="mb-6"'>
+                <label class="block mb-2 text-lg font-medium text-gray-600 dark:text-gray-600" htmlFor="title">title</label>
                 <div className="input">
-                    <input id='title' name='title' placeholder='title' onChange={handleChange} type="text" />
+                    <input 
+                    class="w-full py-2 px-2 border bg-white border-gray-300 rounded focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+                     id='title' name='title' placeholder='title' onChange={handleChange} type="text" />
                 </div>
             </div>
-            <div className='form-group'>
-                <label htmlFor="price">Price</label>
+            <div className='form-group class="mb-6"'>
+                <label class="block mb-2 text-lg font-medium text-gray-600 dark:text-gray-600" htmlFor="price">Price</label>
                 <div className="input">
-                    <input id='price' name='price' placeholder='price' onChange={handleChange} type="number" />
+                    <input 
+                    class="w-full py-2 px-2 border border-gray-300 rounded bg-white focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+                     id='price' name='price' placeholder='price' onChange={handleChange} type="number" />
                 </div>
             </div>
-            <div className='form-group'>
-                <label htmlFor="category">category</label>
+            <div className='form-group class="mb-6"'>
+                <label class="block mb-2 text-lg font-medium text-gray-600 dark:text-gray-600" htmlFor="category">category</label>
                 <div className="input">
-                <select name="category" id="category" onChange={handleChange}>
+                <select className='w-full py-2 px-2 border border-gray-300 rounded bg-white focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800' name="category" id="category" onChange={handleChange}>
                     <option value="">choose</option>
                     <option value="smartphone">SmartPhones</option>
                     <option value="laptop">laptop</option>
@@ -50,32 +51,42 @@ const AddProduct = () => {
                 </select>
                 </div>
             </div>
-            <div className='form-group'>
-                <label htmlFor="thumbnail">thumbnail</label>
+            <div className='form-group class="mb-6"'>
+                <label class="block mb-2 text-lg font-medium text-gray-600 dark:text-gray-600" htmlFor="thumbnail">thumbnail</label>
                 <div className="input">
-                    <input id='thumbnail' name='thumbnail' placeholder='thumbnail' onChange={handleChange} type="text" />
+                    <input 
+                    class="w-full py-2 px-2 border border-gray-300 rounded bg-white focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+                     id='thumbnail' name='thumbnail' placeholder='thumbnail' onChange={handleChange} type="text" />
                 </div>
             </div>
-            <div className='form-group'>
-                <label htmlFor="brand">Brand</label>
+            <div className='form-group class="mb-6"'>
+                <label class="block mb-2 text-lg font-medium text-gray-600 dark:text-gray-600" htmlFor="brand">Brand</label>
                 <div className="input">
-                <select name="brand" id="brand" onChange={handleChange}>
+                <select className='w-full py-2 px-2 border border-gray-300 rounded bg-white focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800' name="brand" id="brand" onChange={handleChange}>
                     <option value="">choose</option>
                     <option value="samsung">Samsung</option>
                     <option value="oppo">Oppo</option>
                     <option value="realme">Realme</option>
+                    <option value="asus">Asus</option>
+                    <option value="hp">Hp</option>
+                    <option value="apple">Apple</option>
+                    <option value="iphone">Iphone</option>
+                    <option value="del">Del</option>
+
 
                 </select>
                 </div>
             </div>
-            <div className='form-group'>
-                <label htmlFor="discount">Discount</label>
+            <div className='form-group class="mb-6"'>
+                <label class="block mb-2 text-lg font-medium text-gray-600 dark:text-gray-600" htmlFor="discountPercentage">Discount</label>
                 <div className="input">
-                    <input id='discount' name='discount' placeholder='discount' onChange={handleChange} type="number" />
+                    <input 
+                    class="w-full py-2 px-2 border border-gray-300 rounded bg-white focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+                     id='discountPercentage' name='discountPercentage' placeholder='discountPercentage' onChange={handleChange} type="number" />
                 </div>
             </div>
-            <div className='form-group'>
-               <button type='submit'>Add Product</button>
+            <div className='form-group class=" mt-3"'>
+               <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type='submit'>Add Product</button>
             </div>
         </fieldset>
     </form>

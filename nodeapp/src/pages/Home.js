@@ -13,6 +13,15 @@ const Home = () => {
     }
   };
 
+  const deleteProduct = async(id) => {
+    const res = await axios.delete(`http://localhost:8080/products/${id}`);
+    console.log(res.data);
+    if(res.data._id){
+      setProduct(product.filter(p=>p._id!==res.data._id));
+    }
+   
+  };
+
   useEffect(() => {
     getProduct();
   }, []);
@@ -22,7 +31,7 @@ const Home = () => {
     <>
       <div className="items-center w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {product.map((data, index) => (
-          <ProductCard key={index} {...data} />
+          <ProductCard key={index} {...data} deleteProduct={deleteProduct} />
         ))}
       </div>
     </>
